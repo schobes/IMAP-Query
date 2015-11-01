@@ -253,6 +253,10 @@ L<http://cpanratings.perl.org/d/IMAP-Query>
 
 L<http://search.cpan.org/dist/IMAP-Query/>
 
+=item * Code Repository
+
+L<https://github.com/schobes/IMAP-Query>
+
 =back
 
 =head1 ACKNOWLEDGEMENTS
