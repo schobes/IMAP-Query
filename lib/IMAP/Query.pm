@@ -154,7 +154,7 @@ sub _build_search_string_recurse
         }
         elsif (defined $item && length $item) {
             _maybe_add_space($rv);
-            if (any{ uc($item) eq $_ } @keywords) {
+            if (any{ uc($item) eq $_ } @KEYWORDS) {
                 $rv .= uc($item);
             }
             else {
