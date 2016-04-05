@@ -5,7 +5,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
     module_name         => 'IMAP::Query',
-    license             => 'Artistic_2_0',
+    license             => 'artistic_2',
     dist_author         => q{Adam R. Schobelock <schobes@gmail.com>},
     dist_version_from   => 'lib/IMAP/Query.pm',
     release_status      => 'stable',
@@ -17,6 +17,7 @@ my $builder = Module::Build->new(
     },
     requires => {
         'Readonly' => 0,
+        'List::MoreUtils' => 0,
     },
     add_to_cleanup     => [ 'IMAP-Query-*' ],
     create_makefile_pl => 'traditional',
