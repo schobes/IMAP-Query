@@ -4,6 +4,9 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 
+use Exporter qw(import);
+use List::MoreUtils qw(any);
+
 =head1 NAME
 
 IMAP::Query - Build IMAP search queries!
@@ -17,6 +20,8 @@ Version 0.01
 our $VERSION = '0.01';
 
 use Readonly;
+Readonly our @EXPORT_OK => qw(build_search_string);
+
 Readonly my @KEYWORDS => qw(
     ALL
     ANSWERED
@@ -54,7 +59,6 @@ Readonly my @KEYWORDS => qw(
     UNKEYWORD
     UNSEEN
 );
-
 
 =head1 SYNOPSIS
 
@@ -154,6 +158,7 @@ sub _build_search_string_recurse
         }
         elsif (defined $item && length $item) {
             _maybe_add_space($rv);
+            use Data::Dumper;
             if (any{ uc($item) eq $_ } @KEYWORDS) {
                 $rv .= uc($item);
             }
